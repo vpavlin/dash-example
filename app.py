@@ -12,6 +12,15 @@ df = pd.read_csv(
     'a9f9e8076b837d541398e999dcbac2b2826a81f8/'+
     'gdp-life-exp-2007.csv')
 
+markdown_text = '''
+### Dash and Markdown
+
+Dash apps can be written in Markdown.
+Dash uses the [CommonMark](http://commonmark.org/)
+specification of Markdown.
+Check out their [60 Second Markdown Tutorial](http://commonmark.org/help/)
+if this is your first introduction to Markdown!
+'''
 
 app.layout = html.Div([
     dcc.Graph(
@@ -39,7 +48,8 @@ app.layout = html.Div([
                 hovermode='closest'
             )
         }
-    )
+    ),
+    dcc.Markdown(children=markdown_text)
 ])
 
 if __name__ == '__main__':
